@@ -1,9 +1,9 @@
 'use strict';
 $(function() {
-  let basePath = window.location.origin;
+  let basePath = 'https://button-to-press-n-times.herokuapp.com/';
   let remain;
   let btn = $('#btn')[0];
-  $.ajax(basePath+'/app/', 
+  $.ajax(basePath+'/', 
   {
     type: 'get',
     data: {method: 'show'},
@@ -21,7 +21,7 @@ $(function() {
     if (remain === '0') {
       btn.innerHTML = 'おめでとう!'
     } else {
-      $.ajax(basePath+'/app/', 
+      $.ajax(basePath+'/', 
       {
         type: 'post',
         data: {method: 'push'},
@@ -41,7 +41,7 @@ $(function() {
     if (remain === '0') {
       clearInterval(intervalId);
     }
-    $.ajax(basePath+'/app/', 
+    $.ajax(basePath+'/', 
     {
       type: 'get',
       data: {method: 'show'},
