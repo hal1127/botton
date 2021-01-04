@@ -15,7 +15,8 @@ $(function() {
   .done(function(data)
   {
     remain = data[0].remain;
-    btn.innerHTML = remain === '0' ? 'おめでとう!' : remain.toLocaleString();
+    btn.innerHTML = remain === '0' ? 'おめでとう!' : parseInt(remain).toLocaleString();
+    $('#btn').css('fontSize', String((14-String(remain).length) * 8)+'px');
   })
   .fail(function()
   {
@@ -27,7 +28,7 @@ $(function() {
       btn.innerHTML = 'おめでとう!'
     } else {
       cnt++;
-      e.target.innerHTML = (remain-cnt).toLocaleString();
+      e.target.innerHTML = parseInt(remain-cnt).toLocaleString();
       $('#btn').css('fontSize', String((14-String(remain-cnt).length) * 8)+'px');
     }
   });
@@ -46,7 +47,7 @@ $(function() {
     .done(function(data) {
       // console.log($('#btn'));
       remain = data[0].remain;
-      btn.innerHTML = remain.toLocaleString();
+      btn.innerHTML = parseInt(remain).toLocaleString();
       $('#btn').css('fontSize', String((14-String(remain).length) * 8)+'px');
     })
     .fail(function() {
