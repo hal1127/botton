@@ -63,3 +63,15 @@ dd:before {
   width: 500px;
   text-align: left;
 }
+
+.toabout {
+  margin-top: 50px;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: #aaa;
+}
