@@ -98,7 +98,7 @@ $(function() {
       
       function interval_handler () {
         button_get();
-        if(interval_cnt >= 10) {
+        if(interval_cnt >= 30) {
           $('input').prop('checked', false)
           $('#btn').on('click', function(e) {click_handler(e)});
           $('#message')[0].innerHTML = '';
