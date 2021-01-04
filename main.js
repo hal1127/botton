@@ -1,19 +1,24 @@
 'use strict';
 $(function() {
   let basePath = 'https://button-to-press-n-times.herokuapp.com/';
+  // let basePath = 'http://localhost:8000/';
   let remain;
+  let cnt = 0;
+  let altcnt = 0
   let btn = $('#btn')[0];
-  $.ajax(basePath+'/', 
+  $.ajax(basePath, 
   {
     type: 'get',
     data: {method: 'show'},
     dataType: 'json',
   })
-  .done(function(data) {
+  .done(function(data)
+  {
     remain = data[0].remain;
     btn.innerHTML = remain === '0' ? 'おめでとう!' : remain;
   })
-  .fail(function() {
+  .fail(function()
+  {
     alert("接続に失敗しました。");
   });
 
@@ -21,19 +26,8 @@ $(function() {
     if (remain === '0') {
       btn.innerHTML = 'おめでとう!'
     } else {
-      $.ajax(basePath+'/', 
-      {
-        type: 'post',
-        data: {method: 'push'},
-        dataType: 'json',
-      })
-      .done(function(data) {
-        remain = data[0].remain;
-        e.target.innerHTML = remain;
-      })
-      .fail(function() {
-        alert("接続に失敗しました。");
-      });
+      cnt++;
+      e.target.innerHTML = remain-cnt;
     }
   });
   
@@ -41,10 +35,11 @@ $(function() {
     if (remain === '0') {
       clearInterval(intervalId);
     }
-    $.ajax(basePath+'/', 
+    altcnt = cnt;
+    $.ajax(basePath, 
     {
-      type: 'get',
-      data: {method: 'show'},
+      type: 'post',
+      data: {method: 'press', cnt: cnt},
       dataType: 'json',
     })
     .done(function(data) {
@@ -55,5 +50,6 @@ $(function() {
     .fail(function() {
       alert("接続に失敗しました。");
     })
-  }, 1000)
+    cnt -= altcnt;
+  }, 1000);
 });
