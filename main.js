@@ -27,7 +27,8 @@ $(function() {
       btn.innerHTML = 'おめでとう!'
     } else {
       cnt++;
-      e.target.innerHTML = remain-cnt;
+      e.target.innerHTML = (remain-cnt).toLocaleString();
+      $('#btn').css('fontSize', String((14-String(remain-cnt).length) * 8)+'px');
     }
   });
   
@@ -45,7 +46,8 @@ $(function() {
     .done(function(data) {
       // console.log($('#btn'));
       remain = data[0].remain;
-      btn.innerHTML = remain;
+      btn.innerHTML = remain.toLocaleString();
+      $('#btn').css('fontSize', String((14-String(remain).length) * 8)+'px');
     })
     .fail(function() {
       alert("接続に失敗しました。");
