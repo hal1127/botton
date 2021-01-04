@@ -15,7 +15,7 @@ $(function() {
   .done(function(data)
   {
     remain = data[0].remain;
-    btn.innerHTML = remain === '0' ? 'おめでとう!' : remain;
+    btn.innerHTML = remain === '0' ? 'おめでとう!' : remain.toLocaleString();
   })
   .fail(function()
   {
