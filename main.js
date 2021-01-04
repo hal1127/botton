@@ -1,7 +1,7 @@
 'use strict';
 $(function() {
-  // let basePath = 'https://button-to-press-n-times.herokuapp.com/';
-  let basePath = 'http://localhost:8000/';
+  let basePath = 'https://button-to-press-n-times.herokuapp.com/';
+  // let basePath = 'http://localhost:8000/';
   let remain;
   let cnt = 0;
   let btn = $('#btn')[0];
