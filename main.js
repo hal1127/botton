@@ -1,7 +1,7 @@
 'use strict';
 $(function() {
-  let basePath = 'https://button-to-press-n-times.herokuapp.com/';
-  // let basePath = 'http://localhost:8000/';
+  // let path = 'https://button-to-press-n-times.herokuapp.com/';
+  let path = 'http://localhost:8000/';
   let remain;
   let cnt = 0;
   let interval_cnt = 0;
@@ -9,7 +9,7 @@ $(function() {
   let toid;
   let itid;
 
-  $.ajax(basePath, 
+  $.ajax(path, 
   {
     type: 'get',
     data: {method: 'show'},
@@ -47,7 +47,7 @@ $(function() {
     if (remain === '0') {
       clearInterval(intervalId);
     }
-    $.ajax(basePath, 
+    $.ajax(path, 
       {
         type: 'post',
         data: {method: 'press', cnt: cnt},
@@ -66,7 +66,7 @@ $(function() {
     
     function button_get()
     {
-      $.ajax(basePath,
+      $.ajax(path,
         {
           type: 'get',
           data: {method: 'show'},
