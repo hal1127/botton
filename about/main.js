@@ -3,7 +3,6 @@ $(function()
 {
   let path = 'https://button-to-press-n-times.herokuapp.com/history/';
   // let path = 'http://localhost:8000/history/';
-  let histories;
   $.ajax(path, 
     {
       type: 'get',
@@ -12,7 +11,6 @@ $(function()
     })
     .done(function(data)
     {
-      console.log(data);
       data.forEach(element => {
         $('tbody').append(`<tr>
                             <td>${element['timestamp']}</td>
