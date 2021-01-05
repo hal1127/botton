@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'banana';
+  src: url(../img/banana.ttf);
+}
+
 body {
   background: black;
   text-align: center;
@@ -52,4 +57,8 @@ th {
 
 td {
   padding: 0 5px 7px;
+}
+
+.banana {
+  font-family: 'banana';
 }
