@@ -1,8 +1,8 @@
 'use strict';
 $(function()
 {
-  // let path = 'https://button-to-press-n-times.herokuapp.com/history/';
-  let path = 'http://localhost:8000/history/';
+  let path = 'https://button-to-press-n-times.herokuapp.com/history/';
+  // let path = 'http://localhost:8000/history/';
   $.ajax(path, 
     {
       type: 'get',

@@ -1,7 +1,7 @@
 'use strict';
 $(function() {
-  // let path = 'https://button-to-press-n-times.herokuapp.com/';
-  let path = 'http://localhost:8000/';
+  let path = 'https://button-to-press-n-times.herokuapp.com/';
+  // let path = 'http://localhost:8000/';
   let remain;
   let cnt = 0;
   let interval_cnt = 0;
