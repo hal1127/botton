@@ -1,8 +1,8 @@
 'use strict';
 $(function()
 {
-  let path = 'https://button-to-press-n-times.herokuapp.com/history/';
-  // let path = 'http://localhost:8000/history/';
+  // let path = 'https://button-to-press-n-times.herokuapp.com/history/';
+  let path = 'http://localhost:8000/history/';
   $.ajax(path, 
     {
       type: 'get',
@@ -14,7 +14,7 @@ $(function()
       data.forEach(element => {
         $('tbody').append(`<tr>
                             <td>${element['timestamp']}</td>
-                            <td>${element['achieve']}回達成！</td>
+                            <td>${parseInt(element['achieve']).toLocaleString()}回達成！</td>
                           </tr>`);
         
       });
